@@ -1,9 +1,8 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import Todo from "./Todo";
 
 // Entidade representa uma tables no DB
-@Entity("users")
-export default class User {
+@Entity("rooms")
+export default class Room {
     // chave primaria auto incremental
     @PrimaryGeneratedColumn()
     id: number;
@@ -12,13 +11,10 @@ export default class User {
     nome: string;
 
     @Column()
-    email: string;
+    typeRoom: string;
 
-    @OneToMany(type => Todo, todo => todo.user)
-    todos: Todo[];
-
-    constructor(nome: string, email: string) {
+    constructor(nome: string, typeRoom: string) {
         this.nome = nome;
-        this.email = email;
+        this.typeRoom = typeRoom;
     }
 }
