@@ -1,1 +1,0 @@
-docker exec -u 1000 -it front_node $@
